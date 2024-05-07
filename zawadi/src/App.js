@@ -1,13 +1,7 @@
+import React from 'react';
 
-import './App.css';
-import navbar from './components/navbar';
-
-function App() {
-  return (
-  <div> 
-    <navbar/>
-  </div>   
-  );
+const App = () => {
+  return <div className='overflow-hidden'>react app</div>;
 };
 
 export default App;
