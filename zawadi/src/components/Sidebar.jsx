@@ -25,6 +25,7 @@ const {} = useContext(CartContext);
           <IoMdArrowForward className='text-2xl'/>
         </div>
       </div>
+      <div>cart items</div>
     </div>
   );
 };
