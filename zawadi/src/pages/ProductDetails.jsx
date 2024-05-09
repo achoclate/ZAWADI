@@ -7,18 +7,20 @@ const ProductDetails = () => {
   const { id } = useParams();
   const { products } = useContext(ProductContext);
   const { addToCart } = useContext(CartContext);
-  const product = products.find(item => {
-    return item.id === parseInt(id);
-  });
 
-  if (!product) {
-    return <section className='h-screen flex justify-center items-center'>Not in stock</section>;
+  // Find the product by id
+  const product = products.find(item => item.id === parseInt(id));
+
+  // If the product is not found or if products are still loading, render a loading or not found message
+  if (!product || !products.length) {
+    return <section className='h-screen flex justify-center items-center'>Loading...</section>;
   }
 
+  // Destructure product details
   const { image, price, title, description } = product;
 
   return (
-    <section className='pt-32 pb-12 lg:py-32 h-screen'>
+    <section className='pt-32 pb-12 lg:py-32 h-screen flex items-center'>
       <div className='container mx-auto'>
         <div className='flex flex-col lg:flex-row items-center'>
           <div className='flex flex-1 justify-center items-center mb-8 lg:mb-0 bg-pink-100'>
