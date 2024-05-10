@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Home from './pages/Home'; // Import the Home component
+import Home from './pages/Home';
+import Shop from './pages/Shop';
+import Contact from './pages/Contact'; // Import the Contact component
 import ProductDetails from './pages/ProductDetails';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
@@ -13,12 +15,11 @@ const App = () => {
     <div className='overflow-hidden'>
       <Router>
         <Header />
-        <Navbar /> {/* Place Navbar component right below Header */}
+        <Navbar />
         <Routes>
-          <Route path='/' element={<Home/>} /> {/* Use Home component here */}
-          <Route path='/Shop' element={<Shop/>} />
-          <Route path='Contact' element={< Contact/>} />
-          <Route path='login' element={<Login/>} />
+          <Route path='/' element={<Home />} />
+          <Route path='/shop' element={<Shop />} />
+          <Route path='/contact' element={<Contact />} /> 
           <Route path='/product/:id' element={<ProductDetails />} />
         </Routes>
         <Sidebar />

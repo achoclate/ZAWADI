@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { RiHomeSmileFill } from 'react-icons/ri';
 import { BsShopWindow } from 'react-icons/bs';
 import { PiPhoneCallFill } from 'react-icons/pi';
@@ -6,10 +7,10 @@ import { CgProfile } from 'react-icons/cg';
 
 const Navbar = () => {
     const Menus = [
-        { name: 'Home', icon: RiHomeSmileFill, dis: 'translate-x-0' },
-        { name: 'Shop', icon: BsShopWindow, dis: 'translate-x-16' },
-        { name: 'Contact', icon: PiPhoneCallFill, dis: 'translate-x-32' },
-        { name: 'Login', icon: CgProfile, dis: 'translate-x-48' },
+        { name: 'Home', icon: RiHomeSmileFill, dis: 'translate-x-0', link: '/' },
+        { name: 'Shop', icon: BsShopWindow, dis: 'translate-x-16', link: '/shop' },
+        { name: 'Contact', icon: PiPhoneCallFill, dis: 'translate-x-32', link: '/contact' },
+        { name: 'Login', icon: CgProfile, dis: 'translate-x-48', link: '/login' },
     ];
 
     const [isActive, setIsActive] = useState(false);
@@ -33,7 +34,8 @@ const Navbar = () => {
             <ul className='flex justify-center relative'>
                 {Menus.map((menu, i) => (
                     <li key={i} className='w-16'>
-                        <a
+                        <Link
+                            to={menu.link} // Link to the specified route
                             className='flex flex-col items-center justify-center text-center pt-6 cursor-pointer'
                             onClick={() => handleMenuClick(i)}
                         >
@@ -43,7 +45,7 @@ const Navbar = () => {
                             <span className={`transition-all duration-300 ${activeIndex === i ? 'opacity-100 translate-y-2' : 'opacity-0'}`}>
                                 {menu.name}
                             </span>
-                        </a>
+                        </Link>
                     </li>
                 ))}
             </ul>
