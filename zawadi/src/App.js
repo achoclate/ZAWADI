@@ -15,8 +15,8 @@ const App = () => {
   return (
     <div className='overflow-hidden'>
       <Router>
-        <Header />
-        <Navbar />
+        <Header /> {/* Render the Header component first */}
+        <Navbar /> {/* Render the Navbar component next */}
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/shop' element={<Shop />} />

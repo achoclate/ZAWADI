@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { RiHomeSmileFill } from 'react-icons/ri';
 import { BsShopWindow } from 'react-icons/bs';
 import { PiPhoneCallFill } from 'react-icons/pi';
 import { CgProfile } from 'react-icons/cg';
+import { TiShoppingCart } from "react-icons/ti"; // Import TiShoppingCart
+import Logo from '../image/logo.jpeg';
+import { CartContext } from '../context/CartContext'; // Import CartContext
 
 const Navbar = () => {
     const Menus = [
@@ -15,6 +18,7 @@ const Navbar = () => {
 
     const [isActive, setIsActive] = useState(false);
     const [activeIndex, setActiveIndex] = useState(-1); // Initialize to -1 to indicate no item is activated
+    const { itemAmount } = useContext(CartContext); // Get itemAmount from CartContext
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -30,8 +34,11 @@ const Navbar = () => {
     };
 
     return (
-        <div className={`${isActive ? 'bg-red-300' : 'bg-blue-300'} fixed top-[40px] w-full rounded-t-xl z-10 transition-all`}> {/* Adjusted top position */}
-            <ul className='flex justify-center relative'>
+        <div className={`${isActive ? 'bg-red-300' : 'bg-blue-300'} fixed top-0 w-full flex items-center justify-between z-10 transition-all px-4 py-2`}>
+            <Link to={'/shop'}>
+                <img className='w-[40px]' src={Logo} alt=''/>
+            </Link>
+            <ul className='flex relative'>
                 {Menus.map((menu, i) => (
                     <li key={i} className='w-12'>
                         <Link
@@ -49,6 +56,10 @@ const Navbar = () => {
                     </li>
                 ))}
             </ul>
+            <div className='cursor-pointer flex relative'>
+                <TiShoppingCart className='text-2xl'/>
+                <div className='bg-red-300 absolute -left-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center'>{itemAmount}</div>
+            </div>
         </div>
     );
 };
