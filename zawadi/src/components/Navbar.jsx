@@ -30,16 +30,16 @@ const Navbar = () => {
     };
 
     return (
-        <div className={`${isActive ? 'bg-red-300' : 'bg-blue-300'} fixed top-[20px] w-full rounded-t-xl z-10 transition-all`}>
+        <div className={`${isActive ? 'bg-red-300' : 'bg-blue-300'} fixed top-[40px] w-full rounded-t-xl z-10 transition-all`}> {/* Adjusted top position */}
             <ul className='flex justify-center relative'>
                 {Menus.map((menu, i) => (
-                    <li key={i} className='w-16'>
+                    <li key={i} className='w-12'>
                         <Link
                             to={menu.link} // Link to the specified route
-                            className='flex flex-col items-center justify-center text-center pt-4 cursor-pointer'
+                            className='flex flex-col items-center justify-center text-center pt-2 cursor-pointer'
                             onClick={() => handleMenuClick(i)}
                         >
-                            <span className={`text-base cursor-pointer duration-500 ${activeIndex === i && '-mt-2 text-pink-600'}`}> {/* Adjusted font size */}
+                            <span className={`text-sm cursor-pointer duration-500 ${activeIndex === i && '-mt-1 text-pink-600'}`}> {/* Adjusted font size */}
                                 {React.createElement(menu.icon, { size: '1.5em', className: 'text-current' })}
                             </span>
                             <span className={`transition-all duration-300 ${activeIndex === i ? 'opacity-100 translate-y-0.5' : 'opacity-0'}`}> {/* Adjusted transition */}
