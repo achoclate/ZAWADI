@@ -36,12 +36,12 @@ const Header = () => {
 
   return (
     <header className={`${isActive ? 'bg-blue-300' : 'bg-red-300'} fixed w-full z-10 transition-all`}>
-      <div className='container mx-auto flex items-center justify-between h-full'>
+      <div className='container mx-auto flex items-center justify-center h-full'> {/* Adjusted flex and justify-center */}
         <div className="flex items-center">
           <Link to={'/shop'}>
             <img className='w-[40px]' src={Logo} alt=''/>
           </Link>
-          <h1 className="text-pink-600 text-bold uppercase">{headerText}</h1> {/* Display the dynamic header text */}
+          <h1 className="text-pink-600 font-semibold text-lg uppercase">{headerText}</h1> {/* Adjusted font size */}
         </div>
         <div onClick={() => setIsOpen(!isOpen)} className='cursor-pointer flex relative'>
           <TiShoppingCart className='text-2xl'/>
