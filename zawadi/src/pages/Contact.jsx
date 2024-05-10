@@ -2,9 +2,9 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <section className="bg-gray-100 py-16">
+    <section className="pt-20 pb-10 px-4"> {/* Adjusted padding */}
       <div className="container mx-auto">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-semibold mb-6 text-center">Contact Us</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white rounded-lg shadow-md p-6">

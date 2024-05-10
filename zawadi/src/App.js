@@ -13,10 +13,10 @@ import Login from './pages/Login'; // Import the Login component
 
 const App = () => {
   return (
-    <div className='overflow-hidden'>
-      <Router>
-        <Header /> {/* Render the Header component first */}
-        <Navbar /> {/* Render the Navbar component next */}
+    <Router>
+      <Header /> {/* Render the Header component first */}
+      <Navbar /> {/* Render the Navbar component next */}
+      <div className="bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] h-screen"> {/* Apply background gradient to body */}
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/shop' element={<Shop />} />
@@ -26,8 +26,8 @@ const App = () => {
         </Routes>
         <Sidebar />
         <Footer />
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 };
 

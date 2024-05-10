@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
@@ -26,8 +25,18 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`${isActive ? 'bg-blue-300' : 'bg-red-300'} fixed w-full z-10 transition-all`}>
-      <div className='container mx-auto flex items-center justify-between h-full'>
+    <header style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100%',
+      backgroundColor: '#fff',
+      zIndex: 100, // Higher z-index for Header
+      display: 'flex',
+      alignItems: 'center', // Center vertically
+      justifyContent: 'center' // Center horizontally
+    }} className={`${isActive ? 'bg-blue-300' : 'bg-red-300'} fixed w-full z-10 transition-all`}>
+      <div className='container mx-auto flex items-center justify-center h-full'>
         <div className="flex items-center">
           <h1 className="text-pink-600 font-semibold text-lg uppercase">{headerText}</h1>
         </div>
