@@ -9,7 +9,7 @@ const Navbar = () => {
         { name: 'Home', icon: RiHomeSmileFill, dis: 'translate-x-0' },
         { name: 'Shop', icon: BsShopWindow, dis: 'translate-x-16' },
         { name: 'Contact', icon: PiPhoneCallFill, dis: 'translate-x-32' },
-        { name: 'Profile', icon: CgProfile, dis: 'translate-x-48' },
+        { name: 'Login', icon: CgProfile, dis: 'translate-x-48' },
     ];
 
     const [isActive, setIsActive] = useState(false);
