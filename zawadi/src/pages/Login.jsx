@@ -5,7 +5,7 @@ const Login = () => {
     <div className='flex w-full h-screen'>
       <div className='w-full flex items-center justify-center lg:w-1/2'>
         <div className='bg-white px-10 py-20 rounded-3xl border-2 border-gray-200 shadow-lg'> {/* Adjusted shadow */}
-          <h1 className='text-5xl font-semibold'>Welcome back!</h1>
+          <h1 className='text-xl font-semibold'>Great to see you!</h1>
           <p className='font-medium text-lg text-gray-600 mt-4'>Enter your details</p>
           <div className='mt-6'>
             <div>
@@ -33,7 +33,7 @@ const Login = () => {
               </div>
             </div>
             <div className='mt-8'>
-              <button className='py-3 rounded-xl bg-rose-200 text-white text-lg font-bold'>Sign in</button>
+              <button className='py-3 rounded-xl bg-rose-400 text-white text-lg font-bold'>Sign in</button>
             </div>
             <div className='mt-8 flex justify-center items-center'>
               <p className='font-medium text-base'>New Customer?</p>
