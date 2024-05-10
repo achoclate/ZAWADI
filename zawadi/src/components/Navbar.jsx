@@ -10,39 +10,37 @@ const Navbar = () => {
         { name: 'Shop', icon: BsShopWindow, dis: 'translate-x-16' },
         { name: 'Contact', icon: PiPhoneCallFill, dis: 'translate-x-32' },
         { name: 'Profile', icon: CgProfile, dis: 'translate-x-48' },
-    ]
+    ];
 
     const [isActive, setIsActive] = useState(false);
-    const [isActivated, setIsActivated] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(-1); // Initialize to -1 to indicate no item is activated
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
             window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
         });
         return () => {
-            window.removeEventListener('scroll', () => { });
+            window.removeEventListener('scroll', () => {});
         };
     }, []);
 
+    const handleMenuClick = (index) => {
+        setActiveIndex(index);
+    };
+
     return (
         <div className={`${isActive ? 'bg-red-300' : 'bg-blue-300'} fixed top-[40px] w-full rounded-t-xl z-10 transition-all`}>
-            <ul className='flex relative'>
-
-                <span className='bg-rose-600 border-4 border-gray-900 h-16 h-16 absolute'>
-
-                </span>
-
+            <ul className='flex justify-center relative'>
                 {Menus.map((menu, i) => (
-
                     <li key={i} className='w-16'>
-
-                        <a className='flex flex-col items-center justify-center text-center pt-6 cursor-pointer'
-                            onClick={() => setIsActivated(i)}>
-
-                            <span className={`text-xl cursor-pointer duration-500 ${i === isActivated &&'-mt-6'}`}>
-                                {React.createElement(menu.icon)}
+                        <a
+                            className='flex flex-col items-center justify-center text-center pt-6 cursor-pointer'
+                            onClick={() => handleMenuClick(i)}
+                        >
+                            <span className={`text-xl cursor-pointer duration-500 ${activeIndex === i && '-mt-6 text-pink-600'}`}>
+                                {React.createElement(menu.icon, { size: '1.5em', className: 'text-current' })}
                             </span>
-                            <span className={`text-pink-800 transition-all duration-300 ${isActivated === i ? 'opacity-100 translate-y-2' : 'opacity-50'}`}>
+                            <span className={`transition-all duration-300 ${activeIndex === i ? 'opacity-100 translate-y-2' : 'opacity-0'}`}>
                                 {menu.name}
                             </span>
                         </a>
