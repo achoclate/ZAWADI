@@ -19,11 +19,11 @@ const Header = () => {
   return (
     <header className={`${isActive ? 'bg-blue-300' : 'bg-red-300'} fixed w-full z-10 transition-all`}>
       <div className='container mx-auto flex items-center justify-between h-full'>
-        <Link to={'/shop'}>
-          <div>
+        <div className="flex items-center">
+          <Link to={'/shop'}>
             <img className='w-[40px]' src={Logo} alt=''/>
-          </div>
-        </Link>
+          </Link>
+        </div>
         <div onClick={() => setIsOpen(!isOpen)} className='cursor-pointer flex relative'>
           <TiShoppingCart className='text-2xl'/>
           <div className='bg-red-300 absolute -left-2 -bottom-2 text-[12px] w-[18px] h-[18px]text-white rounded-full flex justify-center items-center'>{itemAmount}</div>
