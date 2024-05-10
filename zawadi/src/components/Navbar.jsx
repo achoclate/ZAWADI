@@ -28,7 +28,7 @@ const Navbar = () => {
         <div className={`${isActive ? 'bg-red-300' : 'bg-blue-300'} fixed top-[40px] w-full rounded-t-xl z-10 transition-all`}>
             <ul className='flex relative'>
 
-                <span className='bg-rose-600 border-4 border-gray-900 h-16 h-16 abs'>
+                <span className='bg-rose-600 border-4 border-gray-900 h-16 h-16 absolute'>
 
                 </span>
 
