@@ -13,8 +13,8 @@ const [isActive, setIsActive] = useState(false);
  useEffect(() =>{
   window.addEventListener('scroll', ()=>{
     window.scrollY >60 ? setIsActive(true) :setIsActive(false);
-  })
- })
+  });
+ });
   return (
   <header className={`${isActive? 'bg-blue-300' : 'bg-red-300'} fixed w-full z-10 transition-all`}>
     <div className='container mx-auto flex items-center justify-between h-full'>
