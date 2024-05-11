@@ -1,20 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BsPlus } from 'react-icons/bs';
 import { CartContext } from '../context/CartContext';
 
 const Product = ({ product }) => {
   const { addToCart } = useContext(CartContext);
+  const [showNotification, setShowNotification] = useState(false);
 
   const { id, image, category, title, price } = product;
 
   const handleAddToCart = () => {
     addToCart(product, id);
-    alert('Added to cart!');
+    setShowNotification(true);
+
+    // Hide the notification after 2 seconds
+    setTimeout(() => {
+      setShowNotification(false);
+    }, 1000);
   };
 
   return (
     <div>
+      {showNotification && (
+        <div className="bg-pink-500 text-white p-2 mb-2 rounded text-center">
+          Added to cart!
+        </div>
+      )}
+
       <div className='border border-[#e4e4e4] h-[300px] mb-4 relative overflow-hidden group transition'>
         <div className='w-full h-full flex justify-center items-center'>
           <div className='w-[200px] mx-auto flex justify-center items-center'>
@@ -36,7 +48,7 @@ const Product = ({ product }) => {
 
       <div>
         <div className='text-sm capitalize text-gray-500 mb-1'>{category}</div>
-        <Link to={'/product/${id}'}>
+        <Link to={`/product/${id}`}>
           <h2 className='font-semibold mb-1'>{title}</h2>
         </Link>
         <div className='font-semibold'> ${price}</div>
