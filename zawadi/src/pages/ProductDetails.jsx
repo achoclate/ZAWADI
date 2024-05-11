@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import { ProductContext } from '../context/ProductContext';
+import { FiShoppingCart } from 'react-icons/fi';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -20,17 +21,19 @@ const ProductDetails = () => {
   const { image, price, title, description } = product;
 
   return (
-    <section className='pt-32 pb-12 lg:py-32 h-screen flex items-center'>
+    <section className='py-8 px-4'>
       <div className='container mx-auto'>
-        <div className='flex flex-col lg:flex-row items-center'>
-          <div className='flex flex-1 justify-center items-center mb-8 lg:mb-0 bg-pink-100'>
-            <img className='max-w-[200px] lg:max-w-sm' src={image} alt="" />
+        <div className='flex flex-col lg:flex-row'>
+          <div className='lg:w-1/2 mb-8 lg:mb-0 lg:pr-8'>
+            <img className='w-full rounded-lg max-w-xs' src={image} alt={title} />
           </div>
-          <div className='flex-1 text-center lg:text-right '>
-            <h1 className='text-[24px] font-medium mb-2 max-w-[400px] mx-auto lg:mx-0'>{title}</h1>
-            <div className='text-xl text-pink-800 font-medium mb-6'>$ {price}</div>
-            <p className='mb-6'>{description}</p>
-            <button onClick={() => addToCart(product, product.id)} className='bg-red-200 py-4 px-8 text-primary'>Add to cart</button>
+          <div className='lg:w-1/4'>
+            <h1 className='text-2xl font-semibold mb-4'>{title}</h1>
+            <div className='text-lg font-semibold mb-4'>${price}</div>
+            <p className='text-sm mb-2 mt-2'>{description}</p> {/* Added margin-top */}
+            <button onClick={() => addToCart(product, product.id)} className='flex items-center justify-center w-32 bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 text-sm'>
+              <FiShoppingCart className='mr-5 text-lg' /> Add to Cart
+            </button>
           </div>
         </div>
       </div>
