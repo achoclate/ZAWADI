@@ -6,7 +6,7 @@ const Header = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setHeaderText("A promise of hassle-free shopping");
+      setHeaderText("A promise of a hassle-free shopping");
       setTimeout(() => {
         setHeaderText("Thank you!");
         setTimeout(() => {

@@ -39,9 +39,9 @@ const Navbar = () => {
             top: '40px', // Adjust this value to position Navbar below Header
             left: 0,
             width: '100%',
-            backgroundColor: '#000',
+            backgroundColor: '#FED7E2', // Changed color to the given styling
             zIndex: 50 // Lower z-index for Navbar
-        }} className={`${isActive ? 'bg-red-300' : 'bg-blue-300'} fixed w-full flex items-center justify-between z-10 transition-all px-4 py-2`}>
+        }} className={`${isActive ? 'bg-pink-300' : 'bg-blue-300'} fixed w-full flex items-center justify-between z-10 transition-all px-4 py-2`}>
             <Link to={'/shop'}>
                 <img className='w-[40px]' src={Logo} alt=''/>
             </Link>

@@ -21,7 +21,7 @@ const Login = () => {
     setTimeout(() => {
       setShowNotification(false);
       setNotification('');
-    }, 3000);
+    }, 1500);
     
     // You can add additional logic here, such as sending the form data to a server
   };
