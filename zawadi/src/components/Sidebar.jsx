@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { IoArrowForwardCircle } from "react-icons/io5"; 
 import { TbTrashOff } from "react-icons/tb";
 import CartItem from './CartItems'; 
-
 import { SidebarContext } from '../context/SidebarContext';
 import { CartContext } from '../context/CartContext';
 
@@ -15,7 +14,7 @@ const Sidebar = () => {
       className={`${
         isOpen ? 'right-0' : '-right-full' 
       }
-      w-full bg-white fixed top-0 pt-16 shadow-2xl md:w-[35vw] xl:max-w-[30vw] transition-all duration-250 z-20 px-4 lg:px-[35px]`}>
+      w-full bg-white fixed top-0 pt-16 shadow-2xl md:w-[30vw] xl:max-w-[25vw] transition-all duration-250 z-20 px-4 lg:px-[35px]`}>
     
       <div className='flex items-center justify-between py-6 border-b'>
         <div className='uppercase text-sm font-semibold'>Shopping Cart({cart.length})</div>
