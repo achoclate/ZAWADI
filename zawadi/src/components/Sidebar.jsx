@@ -10,6 +10,11 @@ const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext); 
   const { cart, clearCart, total } = useContext(CartContext);
 
+  // Calculate the maximum height of the sidebar content dynamically
+  const sidebarContentHeight = 200; // Height of other elements within the sidebar
+  const availableHeight = window.innerHeight;
+  const maxHeight = availableHeight - sidebarContentHeight;
+
   return (
     <div
       className={`${
@@ -24,8 +29,8 @@ const Sidebar = () => {
           <IoArrowForwardCircle className='text-2xl'/>
         </div>
       </div>
-      <div className='overflow-auto max-h-[calc(100vh-200px)] pb-20'> {/* Adjust max height to your preference */}
-        <div className='bg-pink-100 flex flex-col gap-y-2 '>
+      <div className='overflow-auto' style={{ maxHeight: `${maxHeight}px` }}>
+        <div className='bg-pink-100 flex flex-col gap-y-2'>
           {cart.map((item) => {
             return <CartItem item={item} key={item.id}/>
           })}
