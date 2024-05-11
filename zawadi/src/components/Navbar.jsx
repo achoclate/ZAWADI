@@ -7,6 +7,7 @@ import { CgProfile } from 'react-icons/cg';
 import { TiShoppingCart } from "react-icons/ti"; // Import TiShoppingCart
 import Logo from '../image/logo.jpeg';
 import { CartContext } from '../context/CartContext'; // Import CartContext
+import { SidebarContext } from '../context/SidebarContext'; // Import SidebarContext
 
 const Navbar = () => {
     const Menus = [
@@ -19,6 +20,7 @@ const Navbar = () => {
     const [isActive, setIsActive] = useState(false);
     const [activeIndex, setActiveIndex] = useState(-1); // Initialize to -1 to indicate no item is activated
     const { itemAmount } = useContext(CartContext); // Get itemAmount from CartContext
+    const { setIsOpen } = useContext(SidebarContext); // Get setIsOpen function from SidebarContext
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -31,6 +33,10 @@ const Navbar = () => {
 
     const handleMenuClick = (index) => {
         setActiveIndex(index);
+    };
+
+    const handleCartClick = () => {
+        setIsOpen(prevState => !prevState); // Toggle the sidebar state
     };
 
     return (
@@ -63,10 +69,10 @@ const Navbar = () => {
                     </li>
                 ))}
             </ul>
-            <div className='cursor-pointer flex relative'>
+            <button onClick={handleCartClick} className='cursor-pointer flex relative'>
                 <TiShoppingCart className='text-2xl'/>
                 <div className='bg-red-300 absolute -left-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center'>{itemAmount}</div>
-            </div>
+            </button>
         </div>
     );
 };
