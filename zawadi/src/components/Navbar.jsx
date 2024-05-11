@@ -89,7 +89,7 @@ const Navbar = () => {
                     <FaSearch className='cursor-pointer' />
                     {/* Dropdown to show search results */}
                     {showDropdown && (
-                        <div className="search-dropdown absolute bg-white mt-2 p-2 shadow-md border rounded w-full left-0">
+                        <div className="search-dropdown absolute bg-white mt-2 p-2 shadow-md border rounded w-full left-0 top-full"> {/* Adjust top-full to place the dropdown below */}
                             {filteredProducts.map(product => (
                                 <div key={product.id}>{product.title}</div>
                             ))}
