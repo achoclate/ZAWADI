@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Contact from './pages/Contact';
@@ -16,7 +15,7 @@ const App = () => {
     <Router>
       <Header /> {/* Render the Header component first */}
       <Navbar /> {/* Render the Navbar component next */}
-      <div className="bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] h-screen"> {/* Apply background gradient to body */}
+      <div className="bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] min-h-screen"> {/* Apply background gradient to body */}
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/shop' element={<Shop />} />
