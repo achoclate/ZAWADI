@@ -31,7 +31,6 @@ const Header = () => {
       left: 0,
       width: '100%',
       backgroundColor: `${isActive ? 'bg-blue-300' : 'bg-pink-100'}`, // Change color based on isActive state
-      zIndex: 100, // Higher z-index for Header
       display: 'flex',
       alignItems: 'center', // Center vertically
       justifyContent: 'center' // Center horizontally

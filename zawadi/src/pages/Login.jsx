@@ -29,7 +29,7 @@ const Login = () => {
   return (
     <div className='flex w-full h-screen'>
       <div className='w-full flex items-center justify-center lg:w-1/2'>
-        <div className='bg-white px-10 py-20 rounded-3xl border-2 border-gray-200 shadow-lg'>
+        <div className='bg-white px-10 py-5 rounded-3xl border-2 border-gray-200 shadow-lg'>
           <h1 className='text-lg font-semibold'>Great to see you!</h1>
           <p className='font-medium text-lg text-gray-600 mt-4'>Enter your details</p>
           <form onSubmit={handleSubmit}>

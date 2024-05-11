@@ -36,7 +36,7 @@ const Navbar = () => {
     return (
         <div style={{
             position: 'fixed',
-            top: '40px', // Adjust this value to position Navbar below Header
+            // top: '40px', // Adjust this value to position Navbar below Header
             left: 0,
             width: '100%',
             backgroundColor: '#FED7E2', // Changed color to the given styling

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <section className="pt-20 pb-10 px-4"> {/* Adjusted padding */}
+    <section className=" pt-8 pb-5 px-4"> {/* Adjusted padding */}
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-semibold mt-4cm text-center">Contact Us</h2>
