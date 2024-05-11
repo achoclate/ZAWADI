@@ -30,12 +30,12 @@ const Header = () => {
       top: 0,
       left: 0,
       width: '100%',
-      backgroundColor: '#fff',
+      backgroundColor: `${isActive ? 'bg-blue-300' : 'bg-pink-100'}`, // Change color based on isActive state
       zIndex: 100, // Higher z-index for Header
       display: 'flex',
       alignItems: 'center', // Center vertically
       justifyContent: 'center' // Center horizontally
-    }} className={`${isActive ? 'bg-blue-300' : 'bg-red-300'} fixed w-full z-10 transition-all`}>
+    }} className="fixed w-full z-10 transition-all">
       <div className='container mx-auto flex items-center justify-center h-full'>
         <div className="flex items-center">
           <h1 className="text-pink-600 font-semibold text-lg uppercase">{headerText}</h1>
