@@ -4,10 +4,12 @@ import { RiHomeSmileFill } from 'react-icons/ri';
 import { BsShopWindow } from 'react-icons/bs';
 import { PiPhoneCallFill } from 'react-icons/pi';
 import { CgProfile } from 'react-icons/cg';
-import { TiShoppingCart } from "react-icons/ti"; // Import TiShoppingCart
+import { TiShoppingCart } from 'react-icons/ti';
+import { FaSearch } from 'react-icons/fa'; // Import FaSearch icon
 import Logo from '../image/logo.jpeg';
-import { CartContext } from '../context/CartContext'; // Import CartContext
-import { SidebarContext } from '../context/SidebarContext'; // Import SidebarContext
+import { CartContext } from '../context/CartContext';
+import { SidebarContext } from '../context/SidebarContext';
+import { ProductContext } from '../context/ProductContext'; // Import ProductContext
 
 const Navbar = () => {
     const Menus = [
@@ -17,10 +19,13 @@ const Navbar = () => {
         { name: 'Login', icon: CgProfile, dis: 'translate-x-48', link: '/login' },
     ];
 
+    const { itemAmount } = useContext(CartContext);
+    const { setIsOpen } = useContext(SidebarContext);
+    const { products } = useContext(ProductContext); // Get products from ProductContext
+
     const [isActive, setIsActive] = useState(false);
-    const [activeIndex, setActiveIndex] = useState(-1); // Initialize to -1 to indicate no item is activated
-    const { itemAmount } = useContext(CartContext); // Get itemAmount from CartContext
-    const { setIsOpen } = useContext(SidebarContext); // Get setIsOpen function from SidebarContext
+    const [activeIndex, setActiveIndex] = useState(-1);
+    const [searchQuery, setSearchQuery] = useState(''); // State for search query
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -36,33 +41,62 @@ const Navbar = () => {
     };
 
     const handleCartClick = () => {
-        setIsOpen(prevState => !prevState); // Toggle the sidebar state
+        setIsOpen((prevState) => !prevState);
     };
 
+    const handleSearchChange = (e) => {
+        setSearchQuery(e.target.value); // Update search query state
+    };
+
+    // Filter products based on search query
+    const filteredProducts = products.filter((product) =>
+        product.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
     return (
-        <div style={{
-            position: 'fixed',
-            // top: '40px', // Adjust this value to position Navbar below Header
-            left: 0,
-            width: '100%',
-            backgroundColor: '#FED7E2', // Changed color to the given styling
-            zIndex: 50 // Lower z-index for Navbar
-        }} className={`${isActive ? 'bg-pink-300' : 'bg-blue-300'} fixed w-full flex items-center justify-between z-10 transition-all px-4 py-2`}>
+        <div
+            style={{
+                position: 'fixed',
+                left: 0,
+                width: '100%',
+                backgroundColor: '#FED7E2',
+                zIndex: 50,
+            }}
+            className={`${isActive ? 'bg-pink-300' : 'bg-blue-300'} fixed w-full flex items-center justify-between z-10 transition-all px-4 py-2`}
+        >
             <Link to={'/shop'}>
-                <img className='w-[40px]' src={Logo} alt=''/>
+                <img className='w-[40px]' src={Logo} alt='' />
             </Link>
-            <ul className='flex relative'>
+            <div className='flex items-center'>
+                <input
+                    type='text'
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    placeholder='Search...'
+                    className='px-3 py-1 mr-2 border rounded'
+                />
+                <FaSearch className='cursor-pointer' /> {/* Search button */}
+            </div>
+            <ul className='flex'>
                 {Menus.map((menu, i) => (
                     <li key={i} className='w-12'>
                         <Link
-                            to={menu.link} // Link to the specified route
+                            to={menu.link}
                             className='flex flex-col items-center justify-center text-center pt-2 cursor-pointer'
                             onClick={() => handleMenuClick(i)}
                         >
-                            <span className={`text-sm cursor-pointer duration-500 ${activeIndex === i && '-mt-1 text-pink-600'}`}> {/* Adjusted font size */}
+                            <span
+                                className={`text-sm cursor-pointer duration-500 ${
+                                    activeIndex === i && '-mt-1 text-pink-600'
+                                }`}
+                            >
                                 {React.createElement(menu.icon, { size: '1.5em', className: 'text-current' })}
                             </span>
-                            <span className={`transition-all duration-300 ${activeIndex === i ? 'opacity-100 translate-y-0.5' : 'opacity-0'}`}> {/* Adjusted transition */}
+                            <span
+                                className={`transition-all duration-300 ${
+                                    activeIndex === i ? 'opacity-100 translate-y-0.5' : 'opacity-0'
+                                }`}
+                            >
                                 {menu.name}
                             </span>
                         </Link>
@@ -70,8 +104,10 @@ const Navbar = () => {
                 ))}
             </ul>
             <button onClick={handleCartClick} className='cursor-pointer flex relative'>
-                <TiShoppingCart className='text-2xl'/>
-                <div className='bg-red-300 absolute -left-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center'>{itemAmount}</div>
+                <TiShoppingCart className='text-2xl' />
+                <div className='bg-red-300 absolute -left-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center'>
+                    {itemAmount}
+                </div>
             </button>
         </div>
     );
