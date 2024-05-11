@@ -10,17 +10,12 @@ const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext); 
   const { cart, clearCart, total } = useContext(CartContext);
 
-  // Calculate the maximum height of the sidebar content dynamically
-  const sidebarContentHeight = 200; // Height of other elements within the sidebar
-  const availableHeight = window.innerHeight;
-  const maxHeight = availableHeight - sidebarContentHeight;
-
   return (
     <div
       className={`${
         isOpen ? 'right-0' : '-right-full' 
       }
-      w-full bg-white fixed top-0 h-full shadow-2xl md:w-[35vw] xl:max-w-[30vw] transition-all duration-250 z-20 px-4 lg:px-[35px]`}>
+      w-full bg-white fixed top-0 pt-16 shadow-2xl md:w-[35vw] xl:max-w-[30vw] transition-all duration-250 z-20 px-4 lg:px-[35px]`}>
     
       <div className='flex items-center justify-between py-6 border-b'>
         <div className='uppercase text-sm font-semibold'>Shopping Cart({cart.length})</div>
@@ -29,8 +24,8 @@ const Sidebar = () => {
           <IoArrowForwardCircle className='text-2xl'/>
         </div>
       </div>
-      <div className='overflow-auto' style={{ maxHeight: `${maxHeight}px` }}>
-        <div className='bg-pink-100 flex flex-col gap-y-2'>
+      <div className='overflow-auto max-h-[calc(100vh-200px)] pb-20'> {/* Adjust max height to your preference */}
+        <div className='bg-pink-100 flex flex-col gap-y-2 '>
           {cart.map((item) => {
             return <CartItem item={item} key={item.id}/>
           })}
