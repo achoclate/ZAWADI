@@ -8,29 +8,28 @@ import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login"; 
+import ProductProvider from "./context/ProductContext"; // Import ProductProvider
 
 const App = () => {
   return (
     <Router>
-      
-      <Navbar /> 
-      
-      <div className="pt-14 ">
-
-        <div className=" bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] min-h-screen">
-        
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/product/:id" element={<ProductDetails />} />
-            <Route path="/login" element={<Login />} />{" "}
-            {/* Add route for Login */}
-          </Routes>
-          <Sidebar />
-          <Footer />
+      <ProductProvider> {/* Wrap your application with ProductProvider */}
+        <Navbar /> {/* Include the Navbar component */}
+        <div className="pt-14 ">
+          <div className=" bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] min-h-screen">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/product/:id" element={<ProductDetails />} />
+              <Route path="/login" element={<Login />} />{" "}
+              {/* Add route for Login */}
+            </Routes>
+            <Sidebar />
+            <Footer />
+          </div>
         </div>
-      </div>
+      </ProductProvider>
     </Router>
   );
 };
