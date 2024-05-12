@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": "852e",
+      "email": "nyabokeann@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "0043",
+      "email": "nyabokeann99@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "f7ea",
+      "email": "nyaboke@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "08fb",
+      "email": "nyaboke1@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "7291",
+      "email": "nyabokeann1@gmail.com",
+      "password": "abcd"
+    }
+  ],
+  "reviews": []
+}
