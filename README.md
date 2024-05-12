@@ -1,3 +1,4 @@
+<img width="950" alt="Screenshot 2024-05-13 004703" src="https://github.com/achoclate/ZAWADI/assets/160313415/f3d0c4b2-edbf-45bc-bd3c-a9e0b0434ce9">
 
 # Zawadi E-commerce Platform
 
@@ -32,7 +33,7 @@ Experience the future of online shopping with Zawadi - your ultimate destination
 To get started with Zawadi, simply clone the repository and follow the installation instructions in the README file. Once set up, you can explore the platform's features and start shopping for your favorite products.
 1. **clone the Repository**:clone this repository to your local using Git
 ***
-git clone 
+git clone: github.com/achoclate/ZAWADI.git
 ***
 
 ## Setup
