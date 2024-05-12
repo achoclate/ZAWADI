@@ -33,7 +33,7 @@ const Product = ({ product }) => {
             <img
               className='max-h-[160px] group-hover:scale-110 transition duration-250'
               src={image}
-              alt='Product Image'
+              alt='Product title'
             />
           </div>
         </div>
