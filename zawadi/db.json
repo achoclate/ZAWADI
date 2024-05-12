@@ -26,5 +26,12 @@
       "password": "abcd"
     }
   ],
-  "reviews": []
+  "reviews": [
+    {
+      "id": "8f60",
+      "name": "ANN",
+      "email": "nyabokeann99@gmail.com",
+      "message": "i did it when they said i couldnt"
+    }
+  ]
 }
