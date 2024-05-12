@@ -1,7 +1,7 @@
 
 # Zawadi E-commerce Platform
 
-##Introduction
+## Introduction
 In the rapidly evolving landscape of digital commerce, having a robust and user-friendly e-commerce platform is essential for businesses looking to thrive in the online marketplace. Zawadi is an innovative e-commerce solution designed to provide seamless experiences and intuitive interfaces for both businesses and customers.
 
 ## Features
