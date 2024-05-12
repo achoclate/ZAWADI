@@ -13,8 +13,8 @@ import ProductProvider from "./context/ProductContext"; // Import ProductProvide
 const App = () => {
   return (
     <Router>
-      <ProductProvider> {/* Wrap your application with ProductProvider */}
-        <Navbar /> {/* Include the Navbar component */}
+      <ProductProvider>
+        <Navbar />
         <div className="pt-14 ">
           <div className=" bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] min-h-screen">
             <Routes>
@@ -22,8 +22,7 @@ const App = () => {
               <Route path="/shop" element={<Shop />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/product/:id" element={<ProductDetails />} />
-              <Route path="/login" element={<Login />} />{" "}
-              {/* Add route for Login */}
+              <Route path="/login" element={<Login />} />
             </Routes>
             <Sidebar />
             <Footer />

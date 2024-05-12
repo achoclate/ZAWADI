@@ -1,24 +1,26 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false); // State for the checkbox
+  const [rememberMe, setRememberMe] = useState(false); 
   const [notification, setNotification] = useState('');
   const [showNotification, setShowNotification] = useState(false);
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setNotification('Happy shopping!'); // Set the notification message
-    setEmail(''); // Reset email field
-    setPassword(''); // Reset password field
-    setRememberMe(false); // Reset the checkbox
-    setShowNotification(true); // Show the notification
+    setNotification('Happy shopping!');
+    setEmail('');
+    setPassword('');
+    setRememberMe(false);
+    setShowNotification(true);
 
-    // Reset the notification after 3 seconds
     setTimeout(() => {
       setShowNotification(false);
       setNotification('');
+      navigate('/shop'); // Navigate to '/shop' after notification disappears
     }, 1500);
 
     // Add the fetch request here
