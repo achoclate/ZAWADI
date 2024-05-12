@@ -13,7 +13,7 @@ const Product = ({ product }) => {
     addToCart(product, id);
     setShowNotification(true);
 
-    // Hide the notification after 2 seconds
+    // Hide the notification after 1 seconds
     setTimeout(() => {
       setShowNotification(false);
     }, 1000);

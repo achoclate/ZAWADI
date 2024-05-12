@@ -23,7 +23,7 @@ const Sidebar = () => {
           <IoArrowForwardCircle className='text-2xl'/>
         </div>
       </div>
-      <div className='overflow-auto max-h-[calc(100vh-200px)] pb-20'> {/* Adjust max height to your preference */}
+      <div className='overflow-auto max-h-[calc(100vh-200px)] pb-20'> 
         <div className='bg-pink-100 flex flex-col gap-y-2 '>
           {cart.map((item) => {
             return <CartItem item={item} key={item.id}/>

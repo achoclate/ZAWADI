@@ -8,7 +8,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Add the fetch request here
+    // fetch request here
     fetch("http://localhost:3000/reviews", {
       method: "POST",
       headers: {
@@ -35,7 +35,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="pt-8 pb-5 px-4"> {/* Adjusted padding */}
+    <section className="pt-8 pb-5 px-4"> 
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-semibold mt-4 pb-4 text-center">Contact Us</h2>

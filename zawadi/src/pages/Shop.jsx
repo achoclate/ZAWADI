@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom'; // Import Link
+import { Link } from 'react-router-dom'; 
 import { ProductContext } from '../context/ProductContext';
 import Product from '../components/Product';
 
@@ -11,7 +11,7 @@ const Shop = () => {
 
     return (
         <div className="bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] min-h-screen">
-            <div style={{ paddingTop: '60px' }}> {/* Adjust the paddingTop to match the height of your Navbar */}
+            <div style={{ paddingTop: '60px' }}> 
                 <section className='py-16'>
                     <div className="container mx-auto">
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0'>

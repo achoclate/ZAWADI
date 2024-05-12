@@ -8,7 +8,7 @@ import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login"; 
-import ProductProvider from "./context/ProductContext"; // Import ProductProvider
+import ProductProvider from "./context/ProductContext"; 
 
 const App = () => {
   return (

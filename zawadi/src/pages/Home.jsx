@@ -8,10 +8,10 @@ const Home = () => {
         <source src={require('../image/video.mp4')} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <section className="pt-15 pb-10 px-4"> {/* Adjusted padding */}
+      <section className="pt-15 pb-10 px-4">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-semibold mt-4cm text-center">View Our Stores</h2> {/* Adjusted heading */}
+            <h2 className="text-3xl font-semibold mt-4cm text-center">View Our Stores</h2> 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white rounded-lg shadow-md p-6">
                 <h3 className="text-xl font-semibold mb-4">Our Locations</h3>

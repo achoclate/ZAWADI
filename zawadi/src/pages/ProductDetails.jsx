@@ -30,7 +30,7 @@ const ProductDetails = () => {
           <div className='lg:w-1/4'>
             <h1 className='text-2xl font-semibold mb-4'>{title}</h1>
             <div className='text-lg font-semibold mb-4'>${price}</div>
-            <p className='text-sm mb-2 mt-2'>{description}</p> {/* Added margin-top */}
+            <p className='text-sm mb-2 mt-2'>{description}</p>
             <button onClick={() => addToCart(product, product.id)} className='flex items-center justify-center w-32 bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 text-sm'>
               <FiShoppingCart className='mr-5 text-lg' /> Add to Cart
             </button>

@@ -23,7 +23,7 @@ const Login = () => {
       navigate('/shop'); // Navigate to '/shop' after notification disappears
     }, 1500);
 
-    // Add the fetch request here
+    // fetch request here
     fetch("http://localhost:3000/users", {
       method: "POST",
       headers: {
