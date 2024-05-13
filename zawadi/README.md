@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Zawadi E-commerce Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##Introduction
+In the rapidly evolving landscape of digital commerce, having a robust and user-friendly e-commerce platform is essential for businesses looking to thrive in the online marketplace. Zawadi is an innovative e-commerce solution designed to provide seamless experiences and intuitive interfaces for both businesses and customers.
 
-## Available Scripts
+## Features
+* **Responsive Design**: Zawadi offers a user-friendly interface that is responsive, ensuring the platform is accessible across a wide range of devices. Whether customers are shopping on their desktop, tablet, or smartphone, they can enjoy a consistent and optimized browsing experience.
 
-In the project directory, you can run:
+* **Search Functionality**: Zawadi boasts a robust search functionality that enables users to quickly find specific products they are looking for. With advanced filtering options, customers can easily refine their search results to discover the perfect items that meet their needs.
 
-### `npm start`
+* **Add to Cart**: Users will find an "Add to Cart" button prominently displayed throughout the platform. This button is easily accessible and clearly labeled, encouraging users to take action and add items to their cart with a single click.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* **Confirmation Prompt**: Upon tapping the "Add to Cart" button, a confirmation prompt appears briefly on the screen, confirming that the product has been successfully added to the user's cart. This immediate feedback reassures users that their action was completed successfully, enhancing their shopping experience.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
+ReactJS
+HTML
+CSS
+Tailwind CSS
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## About
+Zawadi is developed and maintained by a passionate developer dedicated to delivering cutting-edge e-commerce solutions. For inquiries or support, please contact us at nyabokeann99@gmail.com.
 
-### `npm run build`
+Experience the future of online shopping with Zawadi - your ultimate destination for all your shopping needs. Happy shopping!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
+To get started with Zawadi, simply clone the repository and follow the installation instructions in the README file. Once set up, you can explore the platform's features and start shopping for your favorite products.
+1. **clone the Repository**:clone this repository to your local using Git
+***
+git clone https://github.com/achoclate/ZAWADI
+***
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+After unbundling the project:
 
-### `npm run eject`
+1. Run `npm install` in your terminal.
+2. Run `npm run server`. This will run your backend on port `3000`.
+3. In a new terminal, run `npm start`. This will run your React app on port `3001`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Make sure to open
+[http://localhost:3000/users/reviews](http://localhost:3000/users/reviews) in the
+browser to verify that your backend is working before you proceed!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Endpoints
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The base URL for your backend is: `http://localhost:3000`
