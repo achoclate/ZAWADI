@@ -1,3 +1,4 @@
+![alt text](image.png)
 # Zawadi E-commerce Platform
 
 ##Introduction
@@ -18,6 +19,9 @@ HTML
 CSS
 Tailwind CSS
 
+## Live Demo
+* [live demo](https://zawadi-ten.vercel.app/)
+
 
 ## About
 Zawadi is developed and maintained by a passionate developer dedicated to delivering cutting-edge e-commerce solutions. For inquiries or support, please contact us at nyabokeann99@gmail.com.
@@ -28,7 +32,7 @@ Experience the future of online shopping with Zawadi - your ultimate destination
 To get started with Zawadi, simply clone the repository and follow the installation instructions in the README file. Once set up, you can explore the platform's features and start shopping for your favorite products.
 1. **clone the Repository**:clone this repository to your local using Git
 ***
-git clone https://github.com/achoclate/ZAWADI
+git clone 
 ***
 
 ## Setup
@@ -37,7 +41,7 @@ After unbundling the project:
 
 1. Run `npm install` in your terminal.
 2. Run `npm run server`. This will run your backend on port `3000`.
-3. In a new terminal, run `npm start`. This will run your React app on port `3001`.
+3. In a new terminal, run `npm start`. This will run Zawadi on port `3001`.
 
 Make sure to open
 [http://localhost:3000/users/reviews](http://localhost:3000/users/reviews) in the
@@ -45,4 +49,4 @@ browser to verify that your backend is working before you proceed!
 
 ## Endpoints
 
-The base URL for your backend is: `http://localhost:3000`
+The base URL for backend is: `http://localhost:3000`
