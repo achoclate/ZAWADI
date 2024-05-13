@@ -65,61 +65,57 @@ const Navbar = () => {
 
     return (
         <div className="relative">
-            <div
-                style={{
-                    position: 'fixed',
-                    left: 0,
-                    width: '100%',
-                    backgroundColor: '#FED7E2',
-                    zIndex: 50,
-                }}
-                className={`${isActive ? 'bg-pink-300' : 'bg-blue-300'} fixed w-full flex items-center justify-between z-10 transition-all px-4 py-2`}
-            >
-                <Link to={'/shop'}>
-                    <img className='w-[40px]' src={Logo} alt='' />
-                </Link>
-                <div className='hidden md:flex items-center relative'>
-                    <input
-                        type='text'
-                        value={searchQuery}
-                        onChange={handleSearchChange}
-                        placeholder='Search...'
-                        className='px-3 py-1 mr-2 border rounded'
-                    />
-                    <FaSearch className='cursor-pointer' />
-                    {showDropdown && (
-                        <div className="search-dropdown absolute bg-white mt-2 p-2 shadow-md border rounded w-full left-0 top-full">
-                            {filteredProducts.map(product => (
-                                <div key={product.id}>{product.title}</div>
-                            ))}
-                            {filteredProducts.length === 0 && (
-                                <div>No products found.</div>
-                            )}
-                        </div>
-                    )}
-                </div>
-                <button onClick={handleCartClick} className='cursor-pointer flex relative'>
-                    <TiShoppingCart className='text-2xl' />
-                    <div className='bg-red-300 absolute -left-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center'>
-                        {itemAmount}
-                    </div>
-                </button>
-                <button onClick={() => setIsActive(!isActive)} className='block md:hidden'>
-                    <svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        className='h-6 w-6'
-                        fill='none'
-                        viewBox='0 0 24 24'
-                        stroke='currentColor'
-                    >
-                        <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth='2'
-                            d={isActive ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16m-7 6h7'}
+            <div className="bg-gray-800 py-4 px-4 md:flex md:items-center md:justify-between">
+                <div className="flex items-center">
+                    <Link to={'/shop'}>
+                        <img className='w-12 md:w-[40px]' src={Logo} alt='' />
+                    </Link>
+                    <div className="ml-3 flex items-center">
+                        <input
+                            type='text'
+                            value={searchQuery}
+                            onChange={handleSearchChange}
+                            placeholder='Search...'
+                            className='px-3 py-1 mr-2 border rounded'
                         />
-                    </svg>
-                </button>
+                        <FaSearch className='cursor-pointer' />
+                        {/* Dropdown to show search results */}
+                        {showDropdown && (
+                            <div className="search-dropdown absolute bg-white mt-2 p-2 shadow-md border rounded w-full left-0 top-full"> {/* Adjust top-full to place the dropdown below */}
+                                {filteredProducts.map(product => (
+                                    <div key={product.id}>{product.title}</div>
+                                ))}
+                                {filteredProducts.length === 0 && (
+                                    <div>No products found.</div>
+                                )}
+                            </div>
+                        )}
+                    </div>
+                </div>
+                <div className="mt-4 md:mt-0">
+                    <button onClick={handleCartClick} className='text-white focus:outline-none'>
+                        <TiShoppingCart className='text-2xl' />
+                        <div className='bg-red-300 absolute -left-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center'>
+                            {itemAmount}
+                        </div>
+                    </button>
+                    <button onClick={() => setIsActive(!isActive)} className='ml-4 md:hidden text-white focus:outline-none'>
+                        <svg
+                            xmlns='http://www.w3.org/2000/svg'
+                            className='h-6 w-6'
+                            fill='none'
+                            viewBox='0 0 24 24'
+                            stroke='currentColor'
+                        >
+                            <path
+                                strokeLinecap='round'
+                                strokeLinejoin='round'
+                                strokeWidth='2'
+                                d={isActive ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16m-7 6h7'}
+                            />
+                        </svg>
+                    </button>
+                </div>
             </div>
             <div className={`${isActive ? 'block' : 'hidden'} md:hidden bg-gray-800 py-2 px-4`}>
                 {Menus.map((menu, i) => (
